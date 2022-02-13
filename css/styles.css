@@ -1,0 +1,54 @@
+/* Buttons */
+.group-btn {
+    text-align: center;
+}
+
+/* Containers */
+.container {
+    margin: 2.5rem auto; /* top and bottom margins are 2.5rem right and left are auto (container is horizontally center) */
+    max-width: 80%;
+}
+
+.grid-wrapper {
+    display: grid; /* two-dimensional block-level grid */
+    /* number of columns in a grid layout. Draw as many columns as it can from 16em up to 1fr (the maximum space available) */
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    grid-gap: 1.5rem; /* gap between rows and columns */
+    justify-items: center; /* justify the grid items along the row axis */
+}
+
+/* Cards */
+.flip-card {
+    width: 16em;
+    height: 16em;
+    background-color: transparent;
+    perspective: 1000px; /* give 3D-positioned element perspective */
+}
+
+.flip-card-inner {
+    position: relative; /* necessary to correctly position the children */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d; /* let the transformed child elements preserve the 3D transformations */
+}
+
+.flip-card-front{
+    background-color: coral;
+}
+
+.flip-card-back{
+    background-color: lightblue;
+    transform: rotateY(180deg); /* rotate the element around its Y-axis 180 degree */
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute; /* positioned the element relative to the nearest positioned ancestor */
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* define the back face of element should not be visible when facing the user */
+}
+
+.rounded {
+    border-radius: 10px; /* defines the radius of the element's corners */
+}
